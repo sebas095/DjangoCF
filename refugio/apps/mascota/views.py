@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import MascotaForm
+from .models import Mascota
 
 # Create your views here.
 def index(request):
@@ -15,3 +16,8 @@ def mascota_view(request):
         form = MascotaForm()
 
     return render(request, 'mascota/mascota_form.html', {'form': form})
+
+def mascota_list(request):
+    mascota = Mascota.objects.all()
+    context = {'mascotas': mascota }
+    return render(request, 'mascota/mascota_list.html', context)
