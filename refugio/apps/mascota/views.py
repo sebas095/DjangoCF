@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from django.views.generic import TemplateView, CreateView, ListView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 from .forms import MascotaForm
 from .models import Mascota
@@ -45,6 +45,9 @@ def mascota_delete(request, id_mascota):
     return render(request, 'mascota/mascota_delete.html', {'mascota': mascota})
 
 # Vistas basadas en clases
+class MascotaIndex(TemplateView):
+    template_name = 'mascota/index.html'
+
 class MascotaList(ListView):
     model = Mascota
     template_name = 'mascota/mascota_list.html'

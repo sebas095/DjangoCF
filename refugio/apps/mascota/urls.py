@@ -1,8 +1,8 @@
 from django.conf.urls import url
-from .views import index, MascotaCreate, MascotaUpdate, MascotaDelete, MascotaList
+from .views import MascotaIndex, MascotaCreate, MascotaUpdate, MascotaDelete, MascotaList
 
 urlpatterns = [
-    url(r'^$', index, name='index'),
+    url(r'^$', MascotaIndex.as_view(), name='mascota_index'),
     url(r'^nuevo/$', MascotaCreate.as_view(), name='mascota_crear'),
     url(r'^listar/$', MascotaList.as_view(), name='mascota_list'),
     url(r'^editar/(?P<pk>\d+)/$', MascotaUpdate.as_view(), name='mascota_editar'),
