@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'apps.adopcion',
     'apps.mascota',
+    'apps.usuario',
 ]
 
 MIDDLEWARE = [

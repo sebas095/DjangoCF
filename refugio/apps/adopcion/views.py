@@ -74,4 +74,4 @@ class SolicitudUpdate(UpdateView):
 class SolicitudDelete(DeleteView):
     model = Solicitud
     template_name = 'adopcion/solicitud_delete.html'
-    success_url = reverse_lazy('solicitud_listar')  
+    success_url = reverse_lazy('solicitud_listar')
