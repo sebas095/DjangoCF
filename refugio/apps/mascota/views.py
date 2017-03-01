@@ -59,6 +59,7 @@ class MascotaIndex(TemplateView):
 class MascotaList(ListView):
     model = Mascota
     template_name = 'mascota/mascota_list.html'
+    paginate_by = 2
 
 class MascotaCreate(CreateView):
     model = Mascota
