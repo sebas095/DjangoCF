@@ -1,10 +1,18 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+from django.core import serializers
 from django.views.generic import TemplateView, CreateView, ListView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 from .forms import MascotaForm
 from .models import Mascota
 
 # Create your views here.
+def listadousuarios(request):
+    lista = serializers.serialize('json', User.objects.all(),
+                                  fields=['username', 'first_name', 'last_name', 'email'])
+    return HttpResponse(lista, content_type='application/json')
+
 def index(request):
     return render(request, 'mascota/index.html')
 
