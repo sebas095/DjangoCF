@@ -27,8 +27,8 @@
                                                 <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Registrar</a></li>
-                                                <li><a href="#">Listar</a></li>
+                                                <li><a href="{% url 'mascota_crear' %}">Registrar</a></li>
+                                                <li><a href="{% url 'mascota_list' %}">Listar</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown">
@@ -37,8 +37,8 @@
                                                 <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Solicitar</a></li>
-                                                <li><a href="#">Listar solicitudes</a></li>
+                                                <li><a href="{% url 'solicitud_crear' %}">Solicitar</a></li>
+                                                <li><a href="{% url 'solicitud_listar' %}">Listar solicitudes</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -54,7 +54,7 @@
                                                 <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Salir</a></li>
+                                                <li><a href="{% url 'logout' %}">Salir</a></li>
                                             </ul>
                                         </li>
                                     </ul>
